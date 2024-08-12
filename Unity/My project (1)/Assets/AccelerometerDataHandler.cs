@@ -3,35 +3,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-using JetBrains.Annotations;
 
 public class DisplacementDataHandler : MonoBehaviour
 {
     public string fileName = "Assets/jogging_inst.csv";
-    public string xColumnName = "x";
-    public string yColumnName = "y";
-    public string zColumnName = "z";
+    public string elapsedTimeColumnName = "elapsed_time";
+    public string dxColumnName = "dx";
+    public string dyColumnName = "dy";
+    public string dzColumnName = "dz";
+    public string xAccelColumnName = "x";
+    public string yAccelColumnName = "y";
+    public string zAccelColumnName = "z";
+    public string rollColumnName = "roll";
+    public string pitchColumnName = "pitch";
+    public string yawColumnName = "yaw";
+    public float speed = 1.0f;
 
     private List<DisplacementEntry> displacementData;
     private int currentIndex = 0;
-    public Transform modelTransform; // Assign your model's transform in the inspector
-    public bool loop = true;
-    public Rigidbody rigid;
-
-    private Vector3 cumulativePosition = Vector3.zero;
-
-    public float speed = 1;
+    public Transform modelTransform;
+    public bool loop = true; //true if continuous animation is desired
+    private Vector3 cumulativeOriginShift = Vector3.zero;
 
     [System.Serializable]
     public class DisplacementEntry
     {
-        public DateTime Timestamp;
+        public float ElapsedTime;
         public Vector3 Displacement;
+        public Vector3 Acceleration;
+        public float Roll;
+        public float Pitch;
+        public float Yaw;
 
-        public DisplacementEntry(DateTime timestamp, Vector3 displacement)
+        public DisplacementEntry(float elapsedTime, Vector3 displacement, Vector3 acceleration, float roll, float pitch, float yaw)
         {
-            Timestamp = timestamp;
+            ElapsedTime = elapsedTime;
             Displacement = displacement;
+            Acceleration = acceleration;
+            Roll = roll;
+            Pitch = pitch;
+            Yaw = yaw;
         }
     }
 
@@ -47,9 +58,16 @@ public class DisplacementDataHandler : MonoBehaviour
         using (var reader = new StreamReader(fileName))
         {
             var header = reader.ReadLine().Split(',');
-            int xIndex = Array.IndexOf(header, xColumnName);
-            int yIndex = Array.IndexOf(header, yColumnName);
-            int zIndex = Array.IndexOf(header, zColumnName);
+            int elapsedTimeIndex = Array.IndexOf(header, elapsedTimeColumnName);
+            int dxIndex = Array.IndexOf(header, dxColumnName);
+            int dyIndex = Array.IndexOf(header, dyColumnName);
+            int dzIndex = Array.IndexOf(header, dzColumnName);
+            int xAccelIndex = Array.IndexOf(header, xAccelColumnName);
+            int yAccelIndex = Array.IndexOf(header, yAccelColumnName);
+            int zAccelIndex = Array.IndexOf(header, zAccelColumnName);
+            int rollIndex = Array.IndexOf(header, rollColumnName);
+            int pitchIndex = Array.IndexOf(header, pitchColumnName);
+            int yawIndex = Array.IndexOf(header, yawColumnName);
 
             while (!reader.EndOfStream)
             {
@@ -57,17 +75,25 @@ public class DisplacementDataHandler : MonoBehaviour
                 var values = line.Split(',');
                 try
                 {
-                    // Adjust the format string to match your timestamp format in the CSV
-                    DateTime timestamp = DateTime.ParseExact(values[0], "yyyy-MM-dd HH:mm:ss.ffffff", System.Globalization.CultureInfo.InvariantCulture);
-                    float x = float.Parse(values[xIndex]);
-                    float y = float.Parse(values[yIndex]);
-                    float z = float.Parse(values[zIndex]);
+                    float elapsedTime = float.Parse(values[elapsedTimeIndex]);
+                    float dx = float.Parse(values[dxIndex]);
+                    float dy = float.Parse(values[dyIndex]);
+                    float dz = float.Parse(values[dzIndex]);
+                    float xAccel = float.Parse(values[xAccelIndex]);
+                    float yAccel = float.Parse(values[yAccelIndex]);
+                    float zAccel = float.Parse(values[zAccelIndex]);
+                    float roll = float.Parse(values[rollIndex]);
+                    float pitch = float.Parse(values[pitchIndex]);
+                    float yaw = float.Parse(values[yawIndex]);
 
-                    displacementData.Add(new DisplacementEntry(timestamp, new Vector3(x, y, z)));
+                    Vector3 displacement = new Vector3(dx, dy, dz);
+                    Vector3 acceleration = new Vector3(xAccel, yAccel, zAccel);
+
+                    displacementData.Add(new DisplacementEntry(elapsedTime, displacement, acceleration, roll, pitch, yaw));
                 }
                 catch (FormatException e)
                 {
-                    Debug.LogError("Error parsing timestamp: " + values[0] + " - " + e.Message);
+                    Debug.LogError("Error parsing CSV line: " + line + " - " + e.Message);
                 }
             }
         }
@@ -79,31 +105,23 @@ public class DisplacementDataHandler : MonoBehaviour
         {
             if (currentIndex < displacementData.Count - 1)
             {
-                // Get current and next data points
                 var currentData = displacementData[currentIndex];
                 var nextData = displacementData[currentIndex + 1];
 
-                // Update the position using displacement values
-                modelTransform.localPosition = currentData.Displacement * speed;
-                //modelTransform.Translate(Vector3.forward * speed * Time.deltaTime);
-                //modelTransform.Translate(nextData.Displacement - currentData.Displacement);
-                //modelTransform.Translate(currentData.Displacement * Time.deltaTime);
-                //modelTransform.Translate(currentData.Displacement);
+                // Update position
+                //cumulativeOriginShift += new Vector3(0, 0, 1); // Shift origin in the Z direction
+                modelTransform.position += currentData.Displacement;
 
-                //cumulativePosition += currentData.Displacement;
-                //modelTransform.position = cumulativePosition;
+                // Update rotation using roll, pitch, and yaw
+                Quaternion rotation = Quaternion.Euler(currentData.Pitch, currentData.Yaw, currentData.Roll);
+                modelTransform.rotation = rotation;
 
-                /*Vector3 newPosition = rigid.position + modelTransform.localPosition;
-                print(modelTransform.localPosition);
-                rigid.MovePosition(newPosition);*/
-
-                // Calculate the delay based on timestamps
-                var timeDifference = nextData.Timestamp - currentData.Timestamp;
-                float waitTime = (float)timeDifference.TotalSeconds;
+                // Calculate delay based on elapsed time
+                var timeDifference = nextData.ElapsedTime - currentData.ElapsedTime;
+                float waitTime = timeDifference / speed;
 
                 currentIndex++;
                 yield return new WaitForSeconds(waitTime);
-                // yield return new WaitForSeconds(0.5f * Time.deltaTime);
             }
             else
             {

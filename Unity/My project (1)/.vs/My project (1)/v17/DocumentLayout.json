@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\koust\\My project (1)\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|c:\\users\\koust\\my project (1)\\assets\\accelerometerdatahandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|C:\\Users\\koust\\My project (1)\\assets\\accelerometerdatahandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|solutionrelative:assets\\accelerometerdatahandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|c:\\users\\koust\\my project (1)\\assets\\cubepathrenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|solutionrelative:assets\\cubepathrenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|C:\\Users\\koust\\My project (1)\\assets\\trail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|solutionrelative:assets\\trail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|C:\\Users\\koust\\My project (1)\\assets\\displayposition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|solutionrelative:assets\\displayposition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|C:\\Users\\koust\\My project (1)\\assets\\colorassigner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|solutionrelative:assets\\colorassigner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|C:\\Users\\koust\\My project (1)\\assets\\planefollower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|C:\\Users\\koust\\My project (1)\\assets\\graphplotter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|solutionrelative:assets\\graphplotter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|C:\\Users\\koust\\My project (1)\\assets\\displayposition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|solutionrelative:assets\\displayposition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,11 +42,35 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Trail.cs",
+              "DocumentMoniker": "C:\\Users\\koust\\My project (1)\\Assets\\Trail.cs",
+              "RelativeDocumentMoniker": "Assets\\Trail.cs",
+              "ToolTip": "C:\\Users\\koust\\My project (1)\\Assets\\Trail.cs",
+              "RelativeToolTip": "Assets\\Trail.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAwCoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T21:18:16.099Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ColorAssigner.cs",
+              "DocumentMoniker": "C:\\Users\\koust\\My project (1)\\Assets\\ColorAssigner.cs",
+              "RelativeDocumentMoniker": "Assets\\ColorAssigner.cs",
+              "ToolTip": "C:\\Users\\koust\\My project (1)\\Assets\\ColorAssigner.cs",
+              "RelativeToolTip": "Assets\\ColorAssigner.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAQwD0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T05:17:43.983Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "CameraFollower.cs",
               "DocumentMoniker": "C:\\Users\\koust\\My project (1)\\Assets\\CameraFollower.cs",
               "RelativeDocumentMoniker": "Assets\\CameraFollower.cs",
@@ -46,7 +82,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "PlaneFollower.cs",
               "DocumentMoniker": "C:\\Users\\koust\\My project (1)\\Assets\\PlaneFollower.cs",
               "RelativeDocumentMoniker": "Assets\\PlaneFollower.cs",
@@ -58,7 +94,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "GraphPlotter.cs",
               "DocumentMoniker": "C:\\Users\\koust\\My project (1)\\Assets\\GraphPlotter.cs",
               "RelativeDocumentMoniker": "Assets\\GraphPlotter.cs",
@@ -70,13 +106,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "DisplayPosition.cs",
               "DocumentMoniker": "C:\\Users\\koust\\My project (1)\\Assets\\DisplayPosition.cs",
               "RelativeDocumentMoniker": "Assets\\DisplayPosition.cs",
               "ToolTip": "C:\\Users\\koust\\My project (1)\\Assets\\DisplayPosition.cs",
               "RelativeToolTip": "Assets\\DisplayPosition.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAASAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAABpAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-25T03:32:23.088Z"
             },
@@ -88,9 +124,22 @@
               "RelativeDocumentMoniker": "Assets\\AccelerometerDataHandler.cs",
               "ToolTip": "C:\\Users\\koust\\My project (1)\\Assets\\AccelerometerDataHandler.cs",
               "RelativeToolTip": "Assets\\AccelerometerDataHandler.cs",
-              "ViewState": "AQIAAEIAAAAAAAAAAAAkwFYAAABIAAAA",
+              "ViewState": "AQIAAFMAAAAAAAAAAAAAwHMAAABxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-30T03:03:44.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CubePathRenderer.cs",
+              "DocumentMoniker": "C:\\Users\\koust\\My project (1)\\Assets\\CubePathRenderer.cs",
+              "RelativeDocumentMoniker": "Assets\\CubePathRenderer.cs",
+              "ToolTip": "C:\\Users\\koust\\My project (1)\\Assets\\CubePathRenderer.cs",
+              "RelativeToolTip": "Assets\\CubePathRenderer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-28T16:58:59.168Z",
               "EditorCaption": ""
             }
           ]
