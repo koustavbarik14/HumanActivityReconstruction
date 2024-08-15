@@ -18,4 +18,5 @@ In case of a new dataset used, it has to have the displacement details in x,y an
 
 Additionally, the data preparation steps can be replicated using **Python/Data_Processing** notebook as reference.
 
+The whole study and brief overview of the study can be found inside the **Docs** folder.
  
