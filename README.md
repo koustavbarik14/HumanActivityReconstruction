@@ -16,7 +16,8 @@ https://github.com/user-attachments/assets/326623c9-11a9-4d51-aa58-04b9e6dce4ec
 
 In case of a new dataset used, it has to have the displacement details in x,y and z axes, euler angles in the form of roll, pitch and yaw, and an elapsed time column available for the current visual reconstruction system to work.
 
-Additionally, the data preparation steps can be replicated using **Python/Data_Processing** notebook as reference.
+The data preparation steps can be replicated using **Python/Data_Processing** notebook as reference. 
+We use the WISDM dataset for our data preparation steps. The folder paths need to be adjusted in the Data_Processing file to execute the file locally.
 
 The whole study and brief overview of the study can be found inside the **Docs** folder.
  
